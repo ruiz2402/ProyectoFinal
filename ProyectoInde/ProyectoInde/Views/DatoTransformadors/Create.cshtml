@@ -1,0 +1,115 @@
+﻿@model ProyectoInde.Models.DatoTransformador
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+<style>
+    /*Diseño boton*/
+    .boton_personalizado {
+        text-decoration: none;
+        /*padding: 10px;*/
+        font-weight: 600;
+        font-size: 20px;
+        color: #ffffff;
+        background-color: #1883ba;
+        border-radius: 6px;
+        border: 2px solid #0016b0;
+    }
+
+        .boton_personalizado:hover {
+            color: #1883ba;
+            background-color: transparent;
+        }
+
+    .boton_alternativo {
+        background-color: #00c69f;
+        color: #ffffff !important;
+        border: 2px solid #006400;
+        border-radius: 7px;
+    }
+
+        .boton_alternativo:hover {
+            background-color: transparent !important;
+            color: #00c69f !important;
+            text-decoration: none;
+        }
+    /*Diseño Div cont*/
+    .contpadre {
+        background: transparent;
+        height: 900px;
+        /*IMPORTANTE*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .conthijo {
+        background: transparent;
+        width: 600px;
+    }
+</style>
+
+<body id="top">
+    <div class="encabezado">
+        <b>INGRESAR DATOS TRANSFORMADOR</b>
+    </div>
+    <section id='services' class="s-services">
+        <div class="contpadre">
+            <div class="conthijo">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <form asp-action="Create">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="PotenciaMw" class="control-label">PotenciaMw</label>
+                                <input asp-for="PotenciaMw" class="form-control" />
+                                <span asp-validation-for="PotenciaMw" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="TemperaturaAcC" class="control-label">Temperatura AcC(C°)</label>
+                                <input asp-for="TemperaturaAcC" class="form-control" />
+                                <span asp-validation-for="TemperaturaAcC" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="TemperaturaDeC" class="control-label">Temperatura DeC(C°)</label>
+                                <input asp-for="TemperaturaDeC" class="form-control" />
+                                <span asp-validation-for="TemperaturaDeC" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="NivelAc" class="control-label">Nivel Ac</label>
+                                <input asp-for="NivelAc" class="form-control" />
+                                <span asp-validation-for="NivelAc" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="VentIMA" class="control-label">Vent I/M/A</label>
+                                <input asp-for="VentIMA" class="form-control" />
+                                <span asp-validation-for="VentIMA" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="FecIngreso" class="control-label">Fecha Ingreso</label>
+                                <input asp-for="FecIngreso" class="form-control" />
+                                <span asp-validation-for="FecIngreso" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="CodHora" class="control-label">Hora</label>
+                                <select asp-for="CodHora" class="form-control" asp-items="ViewBag.CodHora"></select>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="CodTransformador" class="control-label">Transformador</label>
+                                <select asp-for="CodTransformador" class="form-control" asp-items="ViewBag.CodTransformador"></select>
+                            </div>
+                            <div style='text-align:center' class="form-group">
+                                    <input type="submit" value="Crear" class="btn boton_alternativo" /> <a class="btn boton_alternativo" asp-action="Index">Regresar a la Lista</a>
+                                </div>
+                        </form>
+                    </div>
+                </div>
+
+               
+            </div>
+                </div>
+            
+    </section>
+</body>

@@ -1,0 +1,453 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+    var baseurl = "https://" + @Context.Request.Host;
+}
+
+<!DOCTYPE html>
+<!--[if lt IE 9 ]><html class="no-js oldie" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+
+<body id="top">
+
+    <!-- home
+    ================================================== -->
+    <section id="home" class="s-home target-section" data-parallax="scroll" data-image-src="@baseurl/images/rio17.png" data-natural-width=2000 data-natural-height=1000 data-position-y=center>
+
+        <div class="overlay"></div>
+        <div class="shadow-overlay"></div>
+
+        <div class="home-content">
+
+            <div class="row home-content__main">
+
+                <h3>Hola @User.Identity.Name</h3>
+
+                <div style='text-align:center'>
+                    <h1>
+
+                        <br>
+                        La energía que mueve  <br>
+                        al desarrollo
+
+                    </h1>
+
+                    <div style='text-align:center' class="home-content__buttons">
+                        <a asp-controller="Usuarios" asp-action="logout" method="post" class="btn btn--stroke">
+                            Cerrar Sesión
+                        </a>
+                    </div>
+
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+            </div>
+
+            <div class="home-content__scroll">
+                <a href="#about" class="scroll-link smoothscroll">
+                    <span>Scroll Down</span>
+                </a>
+            </div>
+
+            <div class="home-content__line"></div>
+
+        </div> <!-- end home-content -->
+    </section>
+
+
+    <!-- about
+    ================================================== -->
+    <section id='about' class="s-about">
+
+        <div class="row section-header has-bottom-sep" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead subhead--dark">Bienvenido</h3>
+                <h1 class="display-1 display-1--light">¿Qué es el INDE?</h1>
+            </div>
+        </div> <!-- end section-header -->
+
+        <div class="row about-desc" data-aos="fade-up">
+            <div class="col-full">
+                <p>
+                    El Instituto Nacional de Electrificación –INDE- es una entidad estatal, autónoma y descentralizada, la cual goza de autonomía funcional, patrimonio propio, personalidad jurídica y plena capacidad para adquirir derechos y contraer obligaciones en materia de su competencia.
+                </p>
+            </div>
+        </div> <!-- end about-desc -->
+
+        <div class="row about-stats stats block-1-4 block-m-1-2 block-mob-full" data-aos="fade-up">
+
+            <div class="col-block stats__col ">
+                <div class="stats__count">9</div>
+                <h5>Plantas Hidroeléctrica</h5>
+            </div>
+            <div class="col-block stats__col">
+                <div class="stats__count">542</div>
+                <h5>Megavatios de Potencia</h5>
+            </div>
+            <div class="col-block stats__col">
+                <div class="stats__count">17</div>
+                <h5>Mil Hectareas Reforestadas</h5>
+            </div>
+            <div class="col-block stats__col">
+                <div class="stats__count">93</div>
+                <h5>Años de Brindar Servicio</h5>
+            </div>
+
+        </div> <!-- end about-stats -->
+
+        <div class="about__line"></div>
+
+    </section> <!-- end s-about -->
+    <!-- services
+    ================================================== -->
+    <section id='services' class="s-services">
+
+        <div class="row section-header has-bottom-sep" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">Historia</h3>
+                <h1 class="display-2">¿Quiénes somos?</h1>
+            </div>
+        </div> <!-- end section-header -->
+
+        <div class="row services-list block-1-2 block-tab-full">
+
+            <div class="col-block service-item" data-aos="fade-up">
+                <div class="service-icon">
+                    <i class="icon-paint-brush"></i>
+                </div>
+                <div class="service-text">
+                    <h3 class="h2">1959</h3>
+                    <p ALIGN="justify">
+                        El Congreso de la República, por medio del Decreto 1287 de fecha 27 de mayo de 1959,
+                        aprueba la Ley Orgánica del Instituto Nacional de Electrificación –INDE–.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-block service-item" data-aos="fade-up">
+                <div class="service-icon">
+                    <i class="icon-group"></i>
+                </div>
+                <div class="service-text">
+                    <h3 class="h2">1965</h3>
+                    <p ALIGN="justify">
+                        Debido al clamor de otras comunidades por tener el servicio eléctrico, era necesario elevar la capacidad de generación,
+                        por lo que en 1965, el INDE introduce la generación térmica, con el funcionamiento de la planta San Felipe,
+                        que se ubicaba en San Felipe Retalhuleu, cuya capacidad era de 1 megavatio.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-block service-item" data-aos="fade-up">
+                <div class="service-icon">
+                    <i class="icon-megaphone"></i>
+                </div>
+                <div class="service-text">
+                    <h3 class="h2">1968</h3>
+                    <p ALIGN="justify">
+                        Con el objetivo de ser el ente encargado de llevar la electricidad a todos los rincones del país, en 1968 se construye la hidroeléctrica del Porvenir,
+                        San Pablo, San Marcos, con capacidad de 2.0 megavatios.La segunda planta térmica se construyó en Escuintla y se le bautizó como Parque Térmico,
+                        que hoy cuenta con una capacidad de 160 megavatios.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-block service-item" data-aos="fade-up">
+                <div class="service-icon">
+                    <i class="icon-earth"></i>
+                </div>
+                <div class="service-text">
+                    <h3 class="h2">1982</h3>
+                    <p ALIGN="justify">
+                        Con paso acelerado para cumplir con la misión de llevar energía eléctrica a más poblaciones,
+                        en 1982 se construye la hidroeléctrica Aguacapa, con capacidad de 90 megavatios, ubicada en Pueblo Nuevo Viñas, Santa Rosa.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-block service-item" data-aos="fade-up">
+                <div class="service-icon">
+                    <i class="icon-cube"></i>
+                </div>
+                <div class="service-text">
+                    <h3 class="h2">1996</h3>
+                    <p ALIGN="justify">
+                        La era de la modernización.
+
+                        El INDE comienza su era de modernización en el año 1996, después de que el Congreso de la República, aprueba el decreto 64-94, la nueva Ley Orgánica del INDE, donde se le otorga autonomía propia.
+                        En 1996 entra en vigencia la Ley General de Electricidad, la cual obliga al INDE a la separación de funciones: generación, transmisión y distribución.
+                        Con base en esta Ley, el INDE desincorpora de sus funciones la Empresa de Distribución de Energía Eléctrica de Oriente y de Occidente y con los fondos de
+                        dicha venta se funda un fideicomiso para llevar la energía eléctrica a todo el país.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-block service-item" data-aos="fade-up">
+                <div class="service-icon"><i class="icon-battery-high"></i></div>
+                <div class="service-text">
+                    <h3 class="h2">2018</h3>
+                    <p ALIGN="justify">
+                        El INDE sigue con pasos agigantados la senda de una mejor productividad y desarrollo institucional,
+                        lo que le ha valido para colocarse como la primera entidad eléctrica del país y proyectándose como
+                        la institución con más función social, al tener tres programas de alto impacto para la población guatemalteca
+                    </p>
+                </div>
+            </div>
+
+        </div> <!-- end services-list -->
+
+    </section> <!-- end s-services -->
+    <!-- works
+    ================================================== -->
+    <section id='works' class="s-works">
+
+        <div class="intro-wrap">
+
+            <div class="row section-header has-bottom-sep light-sep" data-aos="fade-up">
+                <div class="col-full">
+                    <h3 class="subhead">Galeria</h3>
+                    <h1 class="display-2 display-2--light">Nos encanta lo que hacemos, mira algunas de nuestras plantas hidroeléctricas</h1>
+                </div>
+            </div> <!-- end section-header -->
+
+        </div> <!-- end intro-wrap -->
+
+        <div class="row works-content">
+            <div class="col-full masonry-wrap">
+                <div class="masonry">
+
+                    <div class="masonry__brick" data-aos="fade-up">
+                        <div class="item-folio">
+
+                            <div class="item-folio__thumb">
+                                <a href="@baseurl/images/portfolio/gallery/g-rio5.jpg" class="thumb-link" title="Shutterbug" data-size="1050x700">
+                                    <img src="@baseurl/images/portfolio/rio5.jpg"
+                                         srcset="@baseurl/images/portfolio/rio5.jpg 1x, @baseurl/images/portfolio/lady-rio5@2x.jpg 2x" alt="">
+                                </a>
+                            </div>
+
+                            <div class="item-folio__text">
+                                <h3 class="item-folio__title">
+                                    Chixoy
+                                </h3>
+                                <p class="item-folio__cat">
+                                    Alta Verapaz
+                                </p>
+                            </div>
+
+                            <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link">
+                                <i class="icon-link"></i>
+                            </a>
+
+                            <div class="item-folio__caption">
+                                <p>La Hidroeléctrica Chixoy es una central hidroeléctrica que se extiende en el Río Chixoy. El total de la potencia que genera es de 300 MW, ​ siendo la planta de mayor capacidad de generación eléctrica de Guatemala.</p>
+                            </div>
+
+                        </div>
+                    </div> <!-- end masonry__brick -->
+
+                    <div class="masonry__brick" data-aos="fade-up">
+                        <div class="item-folio">
+
+                            <div class="item-folio__thumb">
+                                <a href="@baseurl/images/portfolio/gallery/g-jurun-marinala.jpg" class="thumb-link" title="Woodcraft" data-size="1050x700">
+                                    <img src="@baseurl/images/portfolio/jurun-marinala.jpg"
+                                         srcset="@baseurl/images/portfolio/jurun-marinala.jpg 1x, @baseurl/images/portfolio/jurun-marinala@2x.jpg 2x" alt="">
+                                </a>
+                            </div>
+
+                            <div class="item-folio__text">
+                                <h3 class="item-folio__title">
+                                    Jurún Marinalá
+                                </h3>
+                                <p class="item-folio__cat">
+                                    Escuintla
+                                </p>
+                            </div>
+
+                            <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link">
+                                <i class="icon-link"></i>
+                            </a>
+
+                            <div class="item-folio__caption">
+                                <p>Esta central se encuentra ubicada en la aldea Agua Blanca, interior de la finca el Salto, departamento de Escuintla, clasificada como una central de regulación diaria. Cuenta con tres (3) unidades generadoras tipo Pelton de eje horizontal, con una capacidad de 20 MW por unidad.</p>
+                            </div>
+
+                        </div>
+                    </div> <!-- end masonry__brick -->
+
+                    <div class="masonry__brick" data-aos="fade-up">
+                        <div class="item-folio">
+
+                            <div class="item-folio__thumb">
+                                <a href="@baseurl/images/portfolio/gallery/g-aguacapa.jpg" class="thumb-link" title="The Beetle Car" data-size="1050x700">
+                                    <img src="@baseurl/images/portfolio/aguacapa.jpg"
+                                         srcset="@baseurl/images/portfolio/aguacapa.jpg 1x, @baseurl/images/portfolio/aguacapa@2x.jpg 2x" alt="">
+                                </a>
+                            </div>
+
+                            <div class="item-folio__text">
+                                <h3 class="item-folio__title">
+                                    Aguacapa
+                                </h3>
+                                <p class="item-folio__cat">
+                                    Escuintla
+                                </p>
+                            </div>
+
+                            <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link">
+                                <i class="icon-link"></i>
+                            </a>
+
+                            <div class="item-folio__caption">
+                                <p>Clasificada como una central de regulación diaria, cuenta con tres (3) unidades generadoras tipo Pelton de eje horizontal, con una capacidad de 30 MW cada una.</p>
+                            </div>
+
+                        </div>
+                    </div> <!-- end masonry__brick -->
+
+                    <div class="masonry__brick" data-aos="fade-up">
+                        <div class="item-folio">
+
+                            <div class="item-folio__thumb">
+                                <a href="@baseurl/images/portfolio/gallery/g-los-esclavos.jpg" class="thumb-link" title="Grow Green" data-size="1050x700">
+                                    <img src="@baseurl/images/portfolio/los-esclavos.jpg"
+                                         srcset="@baseurl/images/portfolio/los-esclavos.jpg 1x, @baseurl/images/portfolio/los-esclavos@2x.jpg 2x" alt="">
+                                </a>
+                            </div>
+
+                            <div class="item-folio__text">
+                                <h3 class="item-folio__title">
+                                    Los Esclavos
+                                </h3>
+                                <p class="item-folio__cat">
+                                    Santa Rosa
+                                </p>
+                            </div>
+
+                            <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link">
+                                <i class="icon-link"></i>
+                            </a>
+
+                            <div class="item-folio__caption">
+                                <p>Esta central fue puesta en operación en el año 1966, estando ubicadas sus instalaciones en la aldea Los Esclavos, del municipio de Cuilapa, departamento de Santa Rosa. En verano se utiliza como una central de regulación diaria y en invierno a filo de agua.</p>
+                            </div>
+
+                        </div>
+                    </div> <!-- end masonry__brick -->
+
+                    <div class="masonry__brick" data-aos="fade-up">
+                        <div class="item-folio">
+
+                            <div class="item-folio__thumb">
+                                <a href="@baseurl/images/portfolio/gallery/g-santa-maria.jpg" class="thumb-link" title="Guitarist" data-size="1050x700">
+                                    <img src="@baseurl/images/portfolio/santa-maria.jpg"
+                                         srcset="@baseurl/images/portfolio/santa-maria.jpg 1x, @baseurl/images/portfolio/santa-maria@2x.jpg 2x" alt="">
+                                </a>
+                            </div>
+
+                            <div class="item-folio__text">
+                                <h3 class="item-folio__title">
+                                    Santa María
+                                </h3>
+                                <p class="item-folio__cat">
+                                    Quetzaltenango
+                                </p>
+                            </div>
+
+                            <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link">
+                                <i class="icon-link"></i>
+                            </a>
+
+                            <div class="item-folio__caption">
+                                <p>Esta central se ubica en el municipio de Zunil, departamento de Quetzaltenango, y fue puesta en servio en 1927. Esta es considerada de regulación diaria, con un embalse de 215,500 m³ como volumen útil, conduciéndose el agua hacia la casa de máquinas a través de una tubería de presión de 0.614 Km de longitud.</p>
+                            </div>
+
+                        </div>
+                    </div> <!-- end masonry__brick -->
+
+                    <div class="masonry__brick" data-aos="fade-up">
+                        <div class="item-folio">
+
+                            <div class="item-folio__thumb">
+                                <a href="@baseurl/images/portfolio/gallery/g-casa-maquina.jpg" class="thumb-link" title="Palmeira" data-size="1050x700">
+                                    <img src="@baseurl/images/portfolio/casa-maquina.jpg"
+                                         srcset="@baseurl/images/portfolio/casa-maquina.jpg 1x, @baseurl/images/portfolio/casa-maquina@2x.jpg 2x" alt="">
+                                </a>
+                            </div>
+
+                            <div class="item-folio__text">
+                                <h3 class="item-folio__title">
+                                    Casa de Máquinas
+                                </h3>
+                                <p class="item-folio__cat">
+                                    Alta Verapaz
+                                </p>
+                            </div>
+
+                            <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link">
+                                <i class="icon-link"></i>
+                            </a>
+
+                            <div class="item-folio__caption">
+                                <p>Es la parte de la Planta Hidroeléctrica Chixoy en la que a través de los componentes mecánicos, eléctricos y electrónicos, se transforma la energía potencial del agua en energía eléctrica. Frente a la casa de máquinas, se construyó la subestación Quixal, en la que se ubican los dispositivos para transportar la energía eléctrica a todo el país.</p>
+                            </div>
+
+                        </div>
+                    </div> <!-- end masonry__brick -->
+
+                </div> <!-- end masonry -->
+            </div> <!-- end col-full -->
+        </div> <!-- end works-content -->
+
+    </section> <!-- end s-works -->
+    
+    <!-- photoswipe background
+    ================================================== -->
+    <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title="Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div> <!-- end photoSwipe background -->
+
+
+</body>
+
+</html>

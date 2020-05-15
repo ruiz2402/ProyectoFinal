@@ -1,0 +1,105 @@
+﻿@model ProyectoInde.Models.DatoTransformador
+
+@{
+    ViewData["Title"] = "Details";
+
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+<style>
+    /*Diseño boton*/
+    .boton_personalizado {
+        text-decoration: none;
+        /*padding: 10px;*/
+        font-weight: 600;
+        font-size: 20px;
+        color: #ffffff;
+        background-color: #1883ba;
+        border-radius: 6px;
+        border: 2px solid #0016b0;
+    }
+
+        .boton_personalizado:hover {
+            color: #1883ba;
+            background-color: transparent;
+        }
+
+    .boton_alternativo {
+        background-color: #00c69f;
+        color: #ffffff !important;
+        border: 2px solid #006400;
+        border-radius: 7px;
+    }
+
+        .boton_alternativo:hover {
+            background-color: transparent !important;
+            color: #00c69f !important;
+            text-decoration: none;
+        }
+    /*Diseño Div cont*/
+    .contpadre {
+        background: transparent;
+        height: 500px;
+        /*IMPORTANTE*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .conthijo {
+        background: transparent;
+        width: 600px;
+    }
+</style>
+
+<body id="top">
+    <div class="encabezado">
+        <b>DETALLES DATOS TRANSFORMADOR</b>
+    </div>
+    <section id='services' class="s-services">
+        <div class="contpadre">
+            <div class="conthijo">
+                <table class="egt">
+                    <tr>
+                        <td style="color:#188f1a"> PotenciaMw</td>
+                        <td> @Html.DisplayFor(model => model.PotenciaMw)</td>
+                    </tr>
+                    <tr>
+                        <td style="color:#188f1a">Temperatura AcC(C°)</td>
+                        <td>@Html.DisplayFor(model => model.TemperaturaAcC)</td>
+                    </tr>
+                    <tr>
+                        <td style="color:#188f1a">Temperatura DeC(C°)</td>
+                        <td>@Html.DisplayFor(model => model.TemperaturaDeC)</td>
+                    </tr>
+                    <tr>
+                        <td style="color:#188f1a">Nivel AC(%)</td>
+                        <td>@Html.DisplayFor(model => model.NivelAc)</td>
+                    </tr>
+                    <tr>
+                        <td style="color:#188f1a">Vent. I/M/A</td>
+                        <td>@Html.DisplayFor(model => model.VentIMA)</td>
+                    </tr>
+                    <tr>
+                        <td style="color:#188f1a"> Fecha de ingreso</td>
+                        <td>@Html.DisplayFor(model => model.FecIngreso)</td>
+                    </tr>
+                    <tr>
+                        <td style="color:#188f1a"> Hora de ingreso</td>
+                        <td>@Html.DisplayFor(model => model.CodHoraNavigation.CodHora)</td>
+                    </tr>
+                    <tr>
+                        <td style="color:#188f1a"> Transformador</td>
+                        <td> @Html.DisplayFor(model => model.CodTransformadorNavigation.Transformador1)</td>
+                    </tr>
+                </table>
+                <div style='text-align:center' class="form-group">
+                    <a class="btn boton_alternativo" asp-action="Edit" asp-route-id="@Model.CodDatoTransformador">Editar</a> <a class="btn boton_alternativo" asp-action="Index">Regresar a la Lista</a>
+                </div>
+            </div>
+
+        </div>
+   
+
+
+    </section>
+</body>

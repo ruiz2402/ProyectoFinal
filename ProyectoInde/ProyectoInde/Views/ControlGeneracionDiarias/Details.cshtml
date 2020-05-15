@@ -1,0 +1,78 @@
+﻿@model ProyectoInde.Models.ControlGeneracionDiaria
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ControlGeneracionDiaria</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model._230kVA)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model._230kVA)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CampoV)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CampoV)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CampoA)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CampoA)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model._138kvA)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model._138kvA)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model._138kvKv)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model._138kvKv)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PAparenteMw)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PAparenteMw)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PAparenteMvar)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PAparenteMvar)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FecIngreso)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FecIngreso)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CodHoraNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CodHoraNavigation.CodHora)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CodUnidadGeneradoraNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CodUnidadGeneradoraNavigation.UnidadGeneradora1)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.CodControlGeneracionDiaria">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

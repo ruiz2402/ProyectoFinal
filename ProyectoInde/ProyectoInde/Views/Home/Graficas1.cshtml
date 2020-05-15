@@ -1,0 +1,281 @@
+﻿@model ProyectoInde.Models.DatoTransformador
+
+@{
+    ViewData["Title"] = "Graficas1";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+    <script src="~/js/html2canvas.min.js"></script>
+
+
+    <style>
+        /*Diseños Div*/
+        .padre {
+            display: flex;
+            justify-content: center;
+        }
+
+        .hijo {
+            padding: 10px;
+            margin: 10px;
+            /* background-color: yellow; */
+        }
+
+        /*Diseño boton*/
+        .boton_personalizado {
+            text-decoration: none;
+            /*padding: 10px;*/
+            font-weight: 600;
+            font-size: 20px;
+            color: #ffffff;
+            background-color: #1883ba;
+            border-radius: 6px;
+            border: 2px solid #0016b0;
+        }
+
+            .boton_personalizado:hover {
+                color: #1883ba;
+                background-color: transparent;
+            }
+
+        .boton_alternativo {
+            background-color: #00c69f;
+            color: #ffffff !important;
+            border: 2px solid #006400;
+            border-radius: 7px;
+        }
+
+            .boton_alternativo:hover {
+                background-color: transparent !important;
+                color: #00c69f !important;
+                text-decoration: none;
+            }
+
+        .highcharts-figure, .highcharts-data-table table {
+            min-width: 310px;
+            max-width: 800px;
+            margin: 1em auto;
+        }
+
+        .highcharts-data-table table {
+            font-family: Verdana, sans-serif;
+            border-collapse: collapse;
+            border: 1px solid #EBEBEB;
+            margin: 10px auto;
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .highcharts-data-table caption {
+            padding: 1em 0;
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        .highcharts-data-table th {
+            font-weight: 600;
+            padding: 0.5em;
+        }
+
+        .highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+            padding: 0.5em;
+        }
+
+        .highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+            background: #f8f8f8;
+        }
+
+        .highcharts-data-table tr:hover {
+            background: #f1f7ff;
+        }
+    </style>
+
+</head>
+
+<body id="top">
+
+    <section id='services' class="s-services">
+        <div class="row section-header has-bottom-sep" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">Gráfica de Tendencias</h3>
+                <h1 class="display-2">Instituto Nacional De Electrificación</h1>
+            </div>
+        </div>
+
+        <figure id="grafica3" class="highcharts-figure">
+            <div id="container"></div>           
+        </figure>
+        
+        <script>
+
+            $(document).ready(function () {
+                $("#btnInforme").click(function (event) {
+
+                    event.preventDefault();
+                    html2canvas(document.querySelector("#grafica3")).then(canvas => {
+
+                        var imgData = canvas.toDataURL("image/jpeg", 1);
+                        var pdf = new jsPDF("l", "mm", "letter");
+                        var pageWidth = pdf.internal.pageSize.getWidth();
+                        var pageHeight = pdf.internal.pageSize.getHeight();
+                        var imageWidth = canvas.width;
+                        var imageHeight = canvas.height;
+                        var ratio = imageWidth / imageHeight >= pageWidth / pageHeight ? pageWidth / imageWidth : pageHeight / imageHeight;
+                        pdf.addImage(imgData, 'JPEG', 0, 0, imageWidth * ratio, imageHeight * ratio);
+                        pdf.save("informe.pdf");
+
+                    });
+
+                });
+
+
+                $("#btnGraficas").click(function (event) {
+                    event.preventDefault();
+
+                    var nombre = $("#tipo-data").val();
+                    var url = '/' + $("#tipo-data").val();
+                    let formData = new FormData();
+                    formData.append('fechaInicial', $("#fecha-inicio").val());
+                    formData.append('fechaFinal', $("#fecha-final").val());
+                    formData.append('transformador', $("#tipo-transformador").val());
+
+                    formData.append('horaInicial', $("#hora-inicio").val());
+                    formData.append('horaFinal', $("#hora-final").val());
+
+                    fetch(url, {
+                        method: 'POST', // or 'PUT'
+                        body: formData,
+
+                    }).then(res => res.json())
+                        .catch(error => console.error('Error:', error))
+                        .then(response => {
+
+                            let data = Array.from(response[0], x => parseFloat(x));
+
+                            Highcharts.chart('container', {
+                                chart: {
+                                    type: 'areaspline'
+                                },
+                                title: {
+                                    text: 'Grafica de Tendencias'
+                                },
+                                legend: {
+                                    layout: 'vertical',
+                                    align: 'left',
+                                    verticalAlign: 'top',
+                                    x: 150,
+                                    y: 100,
+                                    floating: true,
+                                    borderWidth: 1,
+                                    backgroundColor:
+                                        Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF'
+                                },
+                                xAxis: {
+                                    categories: response[1],
+                                    plotBands: [{ // visualize the weekend
+                                        from: 4.5,
+                                        to: 6.5,
+                                        color: 'rgba(68, 170, 213, .2)'
+                                    }]
+                                },
+                                yAxis: {
+                                    title: {
+                                        text: nombre
+                                    }
+                                },
+                                tooltip: {
+                                    shared: true,
+                                    valueSuffix: ''
+                                },
+                                credits: {
+                                    enabled: false
+                                },
+                                plotOptions: {
+                                    areaspline: {
+                                        fillOpacity: 0.5
+                                    }
+                                },
+                                series: [{
+                                    name: nombre,
+                                    data: data
+                                }, {
+                                    name: 'tendencia',
+                                    data: [60, 61, 62,63,65]
+                                }]
+                            });
+
+                        });
+
+                });
+
+            });
+
+        </script>
+
+        <div style='text-align:center' class="form-group">
+
+
+            <div class="padre">
+                <div class="hijo">
+                    <select id="tipo-data" name="tipo">
+                        <option value="potencia">Potencia</option>
+                        <option value="temperaturaAc(C°)">Temperatura AC(C°)</option>
+                        <option value="temperaturaDE(C°)">Temperatura DE(C°)</option>
+                        <option value="nivelAC(%)">Nivel AC(%)</option>
+                        <option value="vent">Vent. I/M/A</option>
+                    </select>
+                </div>
+                <div class="hijo">
+                    <select id="tipo-transformador" name="tipo">
+                        <option value="transformador 1">Transformador 1</option>
+                        <option value="transformador 2">Transformador 2</option>
+                        <option value="transformador 3">Transformador 3</option>
+                        <option value="transformador 4">Transformador 4</option>
+                        <option value="transformador 5">Transformador 5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="padre">
+                <div class="hijo">
+                    <label for="hora-inicio">Hora inicial</label>
+                    <input type="time" id="hora-inicio" />
+                </div>
+                <div class="hijo">
+                    <label for="hora-final">Hora final</label>
+                    <input type="time" id="hora-final" />
+                </div>
+
+
+                <div class="hijo">
+                    <label for="fecha-inicio">Fecha de inicio</label>
+                    <input type="date" id="fecha-inicio" />
+                </div>
+                <div class="hijo">
+                    <label for="fecha-final">Fecha Final</label>
+                    <input type="date" id="fecha-final" />
+                </div>
+            </div>
+            <button type="button" id="btnGraficas" class="btn boton_personalizado">Generar Gráfica <i class="fa fa-database"></i></button>
+            <button type="button" id="btnInforme" class="btn boton_alternativo ">Generar informe  <i class="fa fa-folder-open"></i></button>
+
+        </div>
+    </section>
+</body>
+</html>
+
+
+
+

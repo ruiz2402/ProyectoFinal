@@ -1,0 +1,76 @@
+﻿@model ProyectoInde.Models.ControlGeneracionDiaria
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>ControlGeneracionDiaria</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CodControlGeneracionDiaria" />
+            <div class="form-group">
+                <label asp-for="_230kVA" class="control-label"></label>
+                <input asp-for="_230kVA" class="form-control" />
+                <span asp-validation-for="_230kVA" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CampoV" class="control-label"></label>
+                <input asp-for="CampoV" class="form-control" />
+                <span asp-validation-for="CampoV" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CampoA" class="control-label"></label>
+                <input asp-for="CampoA" class="form-control" />
+                <span asp-validation-for="CampoA" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="_138kvA" class="control-label"></label>
+                <input asp-for="_138kvA" class="form-control" />
+                <span asp-validation-for="_138kvA" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="_138kvKv" class="control-label"></label>
+                <input asp-for="_138kvKv" class="form-control" />
+                <span asp-validation-for="_138kvKv" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PAparenteMw" class="control-label"></label>
+                <input asp-for="PAparenteMw" class="form-control" />
+                <span asp-validation-for="PAparenteMw" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PAparenteMvar" class="control-label"></label>
+                <input asp-for="PAparenteMvar" class="form-control" />
+                <span asp-validation-for="PAparenteMvar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FecIngreso" class="control-label"></label>
+                <input asp-for="FecIngreso" class="form-control" />
+                <span asp-validation-for="FecIngreso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodHora" class="control-label"></label>
+                <select asp-for="CodHora" class="form-control" asp-items="ViewBag.CodHora"></select>
+                <span asp-validation-for="CodHora" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodUnidadGeneradora" class="control-label"></label>
+                <select asp-for="CodUnidadGeneradora" class="form-control" asp-items="ViewBag.CodUnidadGeneradora"></select>
+                <span asp-validation-for="CodUnidadGeneradora" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

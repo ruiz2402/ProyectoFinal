@@ -1,0 +1,456 @@
+﻿@model ProyectoInde.Models.ControlParametroUnidad
+
+
+
+@{
+    ViewData["Title"] = "Create";
+
+}
+
+<head>
+    <title>VAMOS</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <title>Menu Desplegable</title>
+    <style type="text/css">
+        .contpadre {
+            background: transparent;
+            height: 50px;
+            /*IMPORTANTE*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .conthijo {
+            background: transparent;
+            width: 600px;
+        }
+        .boton_alternativo {
+            background-color: #00c69f;
+            color: #ffffff !important;
+            border: 2px solid #006400;
+            border-radius: 7px;
+        }
+
+            .boton_alternativo:hover {
+                background-color: transparent !important;
+                color: #00c69f !important;
+                text-decoration: none;
+            }
+
+        .pc-tab > input,
+        .pc-tab section > div {
+            display: none;
+        }
+
+        #tab1:checked ~ section .tab1,
+        #tab2:checked ~ section .tab2,
+        #tab3:checked ~ section .tab3,
+        #tab4:checked ~ section .tab4,
+        #tab5:checked ~ section .tab5 {
+            display: block;
+        }
+
+        *, *:after, *:before {
+            box-sizing: border_box;
+        }
+
+        body {
+            background-color: #ecf0f1;
+            font-family: 'Lato', sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 60px;
+            color: #e74c3c;
+            letter-spacing: 0.05px;
+        }
+
+        .pc-tab {
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+            .pc-tab ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+
+                .pc-tab ul li label {
+                    float: left;
+                    padding: 15px 25px;
+                    border: 1px solid #ddd;
+                    border-buttom: 0;
+                    background-color: #eeeeee;
+                    color: #444;
+                }
+
+                    .pc-tab ul li label:hover {
+                        background-color: #ddd;
+                    }
+
+                    .pc-tab ul li label:active {
+                        background-color: #fff;
+                    }
+
+        .pac-tab ul li:not(:last-child)label {
+            border-right-width: 0;
+        }
+
+        .pc-tab section {
+            clear: both;
+        }
+
+            .pc-tab section div {
+                padding: 20px;
+                width: 100%;
+                border: 1px solid #ddd;
+                background-color: #fff;
+                line-height: 1.5em;
+                letter-spacing: 0.5px;
+                color: #444;
+            }
+
+                .pc-tab section div h2 {
+                    margin: 0;
+                    letter-spacing: 1px;
+                    color: #34495e;
+                }
+
+        #tab1:checked ~ nav .tab1 label,
+        #tab2:checked ~ nav .tab2 label,
+        #tab3:checked ~ nav .tab3 label,
+        #tab4:checked ~ nav .tab4 label,
+        #tab5:checked ~ nav .tab5 label {
+            background-color: #fff;
+            color: #111;
+            position: relative;
+        }
+
+            #tab1:checked ~ nav .tab1 label:after,
+            #tab2:checked ~ nav .tab2 label:after,
+            #tab3:checked ~ nav .tab3 label:after,
+            #tab4:checked ~ nav .tab4 label:after,
+            #tab5:checked ~ nav .tab5 label:after {
+                content: "";
+                display: block;
+                position: absolute;
+                height: 2px;
+                width: 100%;
+                background-color: #fff;
+                left: 0;
+                bottom: -1px;
+            }
+    </style>
+
+</head>
+
+
+
+<body>
+
+    <h1>Control de parámetros</h1>
+    <form asp-action="Create">
+        <div class="row">
+
+
+            <div class="pc-tab">
+
+
+                <input checked="checked" id="tab1" type="radio" name="pct" />
+                <input id="tab2" type="radio" name="pct" />
+                <input id="tab3" type="radio" name="pct" />
+                <input id="tab4" type="radio" name="pct" />
+                <input id="tab5" type="radio" name="pct" />
+
+
+
+                <nav>
+                    <ul>
+                        <li class"tab1">
+                            <label for="tab1">Sección 1</label>
+                        </li>
+                        <li class"tab2">
+                            <label for="tab2">Sección 2</label>
+                        </li>
+                        <li class"tab3">
+                            <label for="tab3">Sección 3</label>
+                        </li>
+                        <li class"tab4">
+                            <label for="tab4">Sección 4</label>
+                        </li>
+                        <li class"tab5">
+                            <label for="tab5">Sección 5</label>
+                        </li>
+                    </ul>
+                </nav>
+
+
+                <section>
+                    <div class="tab1">
+                        <h2>Primera sección</h2>
+
+
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="form-group">
+                            <label asp-for="DevanadosEstatorCDato1" class="control-label">Devanados Estator°C 1</label>
+                            <input asp-for="DevanadosEstatorCDato1" class="form-control" />
+                            <span asp-validation-for="DevanadosEstatorCDato1" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="DevanadosEstatorCDato2" class="control-label">Devanados Estator°C 2</label>
+                            <input asp-for="DevanadosEstatorCDato2" class="form-control" />
+                            <span asp-validation-for="DevanadosEstatorCDato2" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="DevanadosEstatorCDato3" class="control-label">Devanados Estator°C 3</label>
+                            <input asp-for="DevanadosEstatorCDato3" class="form-control" />
+                            <span asp-validation-for="DevanadosEstatorCDato3" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="DevanadosEstatorCDato4" class="control-label">Devanados Estator°C 4</label>
+                            <input asp-for="DevanadosEstatorCDato4" class="form-control" />
+                            <span asp-validation-for="DevanadosEstatorCDato4" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="DevanadosEstatorCDato5" class="control-label">Devanados Estator°C 5</label>
+                            <input asp-for="DevanadosEstatorCDato5" class="form-control" />
+                            <span asp-validation-for="DevanadosEstatorCDato5" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="DevanadosEstatorCDato6" class="control-label">Devanados Estator°C 6</label>
+                            <input asp-for="DevanadosEstatorCDato6" class="form-control" />
+                            <span asp-validation-for="DevanadosEstatorCDato6" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="DevanadosEstatorCDato7" class="control-label">Devanados Estator°C 7</label>
+                            <input asp-for="DevanadosEstatorCDato7" class="form-control" />
+                            <span asp-validation-for="DevanadosEstatorCDato7" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="DevanadosEstatorCDato8" class="control-label">Devanados Estator°C 8</label>
+                            <input asp-for="DevanadosEstatorCDato8" class="form-control" />
+                            <span asp-validation-for="DevanadosEstatorCDato8" class="text-danger"></span>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="tab2">
+                        <h2>Segunda sección</h2>
+
+
+
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="CojineteEmpujeGeneradorCDato1" class="control-label">Cojinete Empuje Generador°C 1</label>
+                            <input asp-for="CojineteEmpujeGeneradorCDato1" class="form-control" />
+                            <span asp-validation-for="CojineteEmpujeGeneradorCDato1" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="CojineteEmpujeGeneradorCDato2" class="control-label">Cojinete Empuje Generador°C 2</label>
+                            <input asp-for="CojineteEmpujeGeneradorCDato2" class="form-control" />
+                            <span asp-validation-for="CojineteEmpujeGeneradorCDato2" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="CojineteGuiaGeneradorCDato1" class="control-label">Cojinete Guía Generador°C 1</label>
+                            <input asp-for="CojineteGuiaGeneradorCDato1" class="form-control" />
+                            <span asp-validation-for="CojineteGuiaGeneradorCDato1" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="CojineteGuiaGeneradorCDato2" class="control-label">Cojinete Guía Generador°C 2</label>
+                            <input asp-for="CojineteGuiaGeneradorCDato2" class="form-control" />
+                            <span asp-validation-for="CojineteGuiaGeneradorCDato2" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="AireSalienteEnfriadoresGeneradorCDato1" class="control-label">Aire Saliente Enfriadores Generador°C 1</label>
+                            <input asp-for="AireSalienteEnfriadoresGeneradorCDato1" class="form-control" />
+                            <span asp-validation-for="AireSalienteEnfriadoresGeneradorCDato1" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="AireSalienteEnfriadoresGeneradorCDato2" class="control-label">Aire Saliente Enfriadores Generador°C 2</label>
+                            <input asp-for="AireSalienteEnfriadoresGeneradorCDato2" class="form-control" />
+                            <span asp-validation-for="AireSalienteEnfriadoresGeneradorCDato2" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="AireSalienteEnfriadoresGeneradorCDato3" class="control-label">Aire Saliente Enfriadores Generador°C 3</label>
+                            <input asp-for="AireSalienteEnfriadoresGeneradorCDato3" class="form-control" />
+                            <span asp-validation-for="AireSalienteEnfriadoresGeneradorCDato3" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="AireSalienteEnfriadoresGeneradorCDato4" class="control-label">Aire Saliente Enfriadores Generador°C 4</label>
+                            <input asp-for="AireSalienteEnfriadoresGeneradorCDato4" class="form-control" />
+                            <span asp-validation-for="AireSalienteEnfriadoresGeneradorCDato4" class="text-danger"></span>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="tab3">
+                        <h2>Tercera sección</h2>
+
+
+
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="AireSalienteEnfriadoresGeneradorCDato5" class="control-label">Aire Saliente Enfriadores Generador°C 5</label>
+                            <input asp-for="AireSalienteEnfriadoresGeneradorCDato5" class="form-control" />
+                            <span asp-validation-for="AireSalienteEnfriadoresGeneradorCDato5" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="AireSalienteEnfriadoresGeneradorCDato6" class="control-label">Aire Saliente Enfriadores Generador°C 6</label>
+                            <input asp-for="AireSalienteEnfriadoresGeneradorCDato6" class="form-control" />
+                            <span asp-validation-for="AireSalienteEnfriadoresGeneradorCDato6" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="EntradaSalidaAguaEnfriamientoCDato1" class="control-label">Entrada y Salida Agua Enfriamiento°C 1</label>
+                            <input asp-for="EntradaSalidaAguaEnfriamientoCDato1" class="form-control" />
+                            <span asp-validation-for="EntradaSalidaAguaEnfriamientoCDato1" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="EntradaSalidaAguaEnfriamientoCDato2" class="control-label">Entrada y Salida Agua Enfriamiento°C 2</label>
+                            <input asp-for="EntradaSalidaAguaEnfriamientoCDato2" class="form-control" />
+                            <span asp-validation-for="EntradaSalidaAguaEnfriamientoCDato2" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="AguaSalienteEnfriadorCojinetesGenC" class="control-label">Agua Saliente Enfriador Cojinetes Gen.°C</label>
+                            <input asp-for="AguaSalienteEnfriadorCojinetesGenC" class="form-control" />
+                            <span asp-validation-for="AguaSalienteEnfriadorCojinetesGenC" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="AceiteCojineteGeneradorC" class="control-label">Aceite Cojinete Generador°C</label>
+                            <input asp-for="AceiteCojineteGeneradorC" class="form-control" />
+                            <span asp-validation-for="AceiteCojineteGeneradorC" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="CojineteGuiaTurbinaC" class="control-label">Cojinete Guía de la Turbina °C</label>
+                            <input asp-for="CojineteGuiaTurbinaC" class="form-control" />
+                            <span asp-validation-for="CojineteGuiaTurbinaC" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="CaudalAguaSelloLMx20E2639" class="control-label">Caudal Agua de Sello l/mx20(e2639)</label>
+                            <input asp-for="CaudalAguaSelloLMx20E2639" class="form-control" />
+                            <span asp-validation-for="CaudalAguaSelloLMx20E2639" class="text-danger"></span>
+                        </div>
+
+
+                    </div>
+
+                    <div class="tab4">
+                        <h2>Cuarta sección</h2>
+
+
+
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="PresionAguaSelloKgCm226422" class="control-label">Presión agua de sello kg/cm2(2642/2)</label>
+                            <input asp-for="PresionAguaSelloKgCm226422" class="form-control" />
+                            <span asp-validation-for="PresionAguaSelloKgCm226422" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="TemperaturaSelloEje2276" class="control-label">Temperatura sello de eje(2276)</label>
+                            <input asp-for="TemperaturaSelloEje2276" class="form-control" />
+                            <span asp-validation-for="TemperaturaSelloEje2276" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="CojineteEmpujeC" class="control-label">Cojinete de Empuje°C</label>
+                            <input asp-for="CojineteEmpujeC" class="form-control" />
+                            <span asp-validation-for="CojineteEmpujeC" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="AireLlegadaEnfriadorCNo1" class="control-label">Aire de llegada de enfriador °C-No.1</label>
+                            <input asp-for="AireLlegadaEnfriadorCNo1" class="form-control" />
+                            <span asp-validation-for="AireLlegadaEnfriadorCNo1" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="AireLlegadaEnfriadorCNo2" class="control-label">Aire de llegada de enfriador °C-No.2</label>
+                            <input asp-for="AireLlegadaEnfriadorCNo2" class="form-control" />
+                            <span asp-validation-for="AireLlegadaEnfriadorCNo2" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="CojineteGuiaSuperiorC" class="control-label">Cojinete de guía superior°C</label>
+                            <input asp-for="CojineteGuiaSuperiorC" class="form-control" />
+                            <span asp-validation-for="CojineteGuiaSuperiorC" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="AireSalidaEnfriadorCNo1" class="control-label">Aire de salida del enfriador°C-No.1</label>
+                            <input asp-for="AireSalidaEnfriadorCNo1" class="form-control" />
+                            <span asp-validation-for="AireSalidaEnfriadorCNo1" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="AireSalidaEnfriadorCNo2" class="control-label">Aire de salida del enfriador°C-No.2</label>
+                            <input asp-for="AireSalidaEnfriadorCNo2" class="form-control" />
+                            <span asp-validation-for="AireSalidaEnfriadorCNo2" class="text-danger"></span>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="tab5">
+                        <h2>Quinta sección</h2>
+
+
+
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="PresionAguaSelloEje26432" class="control-label">Presión del agua sello del eje (2643/2)</label>
+                            <input asp-for="PresionAguaSelloEje26432" class="form-control" />
+                            <span asp-validation-for="PresionAguaSelloEje26432" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="PresionAguaSelloEje26431" class="control-label">Presión del agua sello del eje (2643/1)</label>
+                            <input asp-for="PresionAguaSelloEje26431" class="form-control" />
+                            <span asp-validation-for="PresionAguaSelloEje26431" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="PotenciaMw" class="control-label">Potencia MW</label>
+                            <input asp-for="PotenciaMw" class="form-control" />
+                            <span asp-validation-for="PotenciaMw" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="FecIngreso" class="control-label">Fecha de Ingreso</label>
+                            <input asp-for="FecIngreso" class="form-control" />
+                            <span asp-validation-for="FecIngreso" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="CodHora" class="control-label">Hora de ingreso</label>
+                            <select asp-for="CodHora" class="form-control" asp-items="ViewBag.CodHora"></select>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="CodUnidadGeneradora" class="control-label">Unidad Generadora</label>
+                            <select asp-for="CodUnidadGeneradora" class="form-control" asp-items="ViewBag.CodUnidadGeneradora"></select>
+                        </div>
+                        <div class="form-group">
+                            <input asp-controller="Home" asp-action="informe" method="get" type="submit" value="Ingresar" class="btn btn-primary" />
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+
+        </div>
+    </form>
+
+
+</body>
+
+
+<div class="contpadre">
+    <div class="conthijo">
+        <a class="btn btn_alternativo" asp-action="Index">Regresar a la lista</a>  <a class="btn btn_alternativo" asp-controller="Home" asp-action="informe" method="get">Regresar al Formulario</a>
+    </div>
+</div>
+
+
+

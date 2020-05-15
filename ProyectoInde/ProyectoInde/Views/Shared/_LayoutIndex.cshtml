@@ -1,0 +1,375 @@
+﻿@{
+
+    var baseurl = "https://" + @Context.Request.Host;
+
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ProyectoInde</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <style type="text/css"></style>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+
+    <style>
+        /*Diseños Div*/
+        .padre {
+            display: flex;
+            justify-content: left;
+        }
+
+        .hijo {
+            padding: 10px;
+            margin: 10px;
+            /* background-color: yellow; */
+        }
+
+        .encabezado {
+            background-color: transparent;
+            margin: 2rem;
+            padding: 2rem;
+            color: #109830;
+            border: 2px solid transparent;
+            /* IMPORTANTE */
+            text-align: center;
+        }
+
+       
+     
+
+    </style>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Glint</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="@baseurl/css/base.css">
+    <link rel="stylesheet" href="@baseurl/css/vendor.css">
+    <link rel="stylesheet" href="@baseurl/css/main.css">
+
+    <!-- script
+    ================================================== -->
+    <script src="@baseurl/js/modernizr.js"></script>
+    <script src="@baseurl/js/pace.min.js"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="@baseurl/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="@baseurl/favicon.ico" type="image/x-icon">
+
+</head>
+
+<body>
+
+    <!-- header
+    ================================================== -->
+    <header class="s-header">
+
+        <div class="header-logo">
+            <a class="site-logo" asp-area="" asp-controller="Home" asp-action="Index">
+                <img src="@baseurl/images/INDE.png" alt="Homepage">
+            </a>
+        </div>
+        @if (@User.Identity.IsAuthenticated)
+        {
+            @if (@User.IsInRole("administrador"))
+            {
+                <nav class="header-nav">
+
+                    <a href="#0" class="header-nav__close" title="close"><span>Close</span></a>
+
+                    <div class="header-nav__content">
+                        <h3>MENÚ</h3>
+
+                        <ul class="header-nav__list">
+                            <li class="current">
+                                <a class="smoothscroll" href="#home" title="home">Usuarios</a>
+                                <ul>
+                                    <li class="current">
+                                        <a class="nav-link text-white-50" asp-area="" asp-controller="Usuarios" asp-action="Index">Crear Usuario</a>
+                                    </li>
+                                    <li class="current">
+                                        <a class="nav-link text-white-50" asp-area="" asp-controller="Usuariosxrols" asp-action="Index">Asign. de roles</a>
+                                    </li>
+                                    <li class="current">
+                                        <a class="nav-link text-white-50" asp-area="" asp-controller="UsuarioxunidadGeneradoras" asp-action="Index">Asign. Uds.Gs.</a>
+                                    </li>
+                                </ul>
+
+                            </li>
+
+                            <li><a class="smoothscroll" href="#home" title="home">Ingreso de Datos</a>
+                                <ul>
+                                    <li class="current">
+                                        <a class="nav-link text-white-50" asp-area="" asp-controller="Home" asp-action="informe">Formularios</a>
+                                    </li>
+                                </ul>
+
+                            </li>
+                            <li>
+                                <a class="smoothscroll" href="#home" title="home">Estadística</a>
+                                <ul>
+                                    <li class="current">
+                                        <a class="nav-link text-white-50" asp-area="" asp-controller="Home" asp-action="Graficas">Gráficas</a>
+                                    </li>
+                                    <li class="current">
+                                        <a class="nav-link text-white-50" asp-area="" asp-controller="Home" asp-action="Graficas2">Promedios</a>
+                                    </li>
+                                    <li class="current">
+                                        <a class="nav-link text-white-50" asp-area="" asp-controller="Home" asp-action="Graficas1">Tendencias</a>
+                                    </li>
+                                    <li class="current">
+                                        <a class="nav-link text-white-50" asp-area="" asp-controller="Home" asp-action="Graficas3">Disparos</a>
+                                    </li>
+
+                                </ul>
+
+                            </li>
+                            <li>
+                                <a class="smoothscroll" href="#home" title="home">Uds. Generadoras</a>
+                                <ul>
+                                    <li class="current">
+                                        <a class="nav-link text-white-50" asp-area="" asp-controller="UnidadGeneradoras" asp-action="Create">Crear Ud.G.</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+
+                        <p>Perspiciatis hic praesentium nesciunt. Et neque a dolorum <a href='#0'>voluptatem</a> porro iusto sequi veritatis libero enim. Iusto id suscipit veritatis neque reprehenderit.</p>
+
+                        <ul class="header-nav__social">
+                            <li>
+                                <a href="https://www.facebook.com/inde.gt/"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/indeguatemala?lang=es"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="mailto:gcomunicacion@inde.gob.gt"><i class="fa fa-inbox"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/channel/UCbI23nA4-btJ6UQiRcD3obw"><i class="fa fa-youtube"></i></a>
+                            </li>
+                            <li>
+                                <a href="http://www.inde.gob.gt/"><i class="fa fa-dribbble"></i></a>
+                            </li>
+                            <li>
+                                <a href="tel:24221820"><i class="fa fa-mobile-phone" ></i></a>
+                            </li>
+                        </ul>
+
+                    </div> <!-- end header-nav__content -->
+
+                </nav> <!-- end header-nav -->
+            }
+        }
+
+        @if (@User.Identity.IsAuthenticated)
+        {
+            @if (@User.IsInRole("operador"))
+            {
+                <nav class="header-nav">
+
+
+                    <a href="#0" class="header-nav__close" title="close"><span>Close</span></a>
+
+                    <div class="header-nav__content">
+                        <h3>MENÚ</h3>
+
+                        <ul class="header-nav__list">
+
+                            <li><a class="smoothscroll" href="#home" title="home">Ingreso de Datos</a>
+                                <ul>
+                                    <li class="current">
+                                        <a class="nav-link text-white-50" asp-area="" asp-controller="Home" asp-action="informe">Formularios</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="smoothscroll" href="#home" title="home">Estadística</a>
+                                <ul>
+                                    <li class="current">
+                                        <a class="nav-link text-white-50" asp-area="" asp-controller="Home" asp-action="Graficas">Gráficas</a>
+                                    </li>
+                                    <li class="current">
+                                        <a class="nav-link text-white-50" asp-area="" asp-controller="Home" asp-action="Graficas2">Promedios</a>
+                                    </li>
+                                    <li class="current">
+                                        <a class="nav-link text-white-50" asp-area="" asp-controller="Home" asp-action="Graficas1">Tendencias</a>
+                                    </li>
+                                    <li class="current">
+                                        <a class="nav-link text-white-50" asp-area="" asp-controller="Home" asp-action="Graficas3">Disparos</a>
+                                    </li>
+
+                                </ul>
+
+                            </li>
+
+
+                        </ul>
+
+                        <p>Perspiciatis hic praesentium nesciunt. Et neque a dolorum <a href='#0'>voluptatem</a> porro iusto sequi veritatis libero enim. Iusto id suscipit veritatis neque reprehenderit.</p>
+
+                        <ul class="header-nav__social">
+                            <li>
+                                <a href="https://www.facebook.com/inde.gt/"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/indeguatemala?lang=es"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="mailto:gcomunicacion@inde.gob.gt"><i class="fa fa-inbox"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/channel/UCbI23nA4-btJ6UQiRcD3obw"><i class="fa fa-youtube"></i></a>
+                            </li>
+                            <li>
+                                <a href="http://www.inde.gob.gt/"><i class="fa fa-dribbble"></i></a>
+                            </li>
+                            <li>
+                                <a href="tel:24221820"><i class="fa fa-mobile-phone"></i></a>
+                            </li>
+                        </ul>
+
+                    </div> <!-- end header-nav__content -->
+
+                </nav> <!-- end header-nav -->
+            }
+        }
+
+        <a class="header-menu-toggle" href="#0">
+            <span class="header-menu-text">Menú</span>
+            <span class="header-menu-icon"></span>
+        </a>
+
+    </header> <!-- end s-header -->
+
+
+    <div>
+
+        @RenderBody()
+
+
+
+    </div>
+
+    <ul class="home-social">
+        <li>
+            <a href="https://www.facebook.com/inde.gt/"><i class="fa fa-facebook" aria-hidden="true"></i><span>Facebook</span></a>
+        </li>
+        <li>
+            <a href="https://twitter.com/indeguatemala?lang=es"><i class="fa fa-twitter" aria-hidden="true"></i><span>Twiiter</span></a>
+        </li>
+        <li>
+            <a href="mailto:gcomunicacion@inde.gob.gt"><i class="fa fa-inbox" aria-hidden="true"></i><span>Email</span></a>
+        </li>
+        <li>
+            <a href="https://www.youtube.com/channel/UCbI23nA4-btJ6UQiRcD3obw"><i class="fa fa-youtube" aria-hidden="true"></i><span>Youtube</span></a>
+        </li>
+        <li>
+            <a href="http://www.inde.gob.gt/"><i class="fa fa-dribbble" aria-hidden="true"></i><span>INDE</span></a>
+        </li>
+        <li>
+            <a href="tel:24221820"><i class="fa fa-mobile-phone" aria-hidden="true"></i><span>Telefono</span></a>
+        </li>
+    </ul>
+    <!-- end home-social -->
+    </section> <!-- end s-home -->
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader">
+            <div class="line-scale-pulse-out">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer
+        ================================================== -->
+    <footer>
+
+        <div class="row footer-main">
+
+            <div class="col-six tab-full left footer-desc">
+                <a class="site-logo" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="@baseurl/images/INDE.png" alt="Homepage">
+                </a>
+
+                <p ALIGN="justify">
+                    El Instituto Nacional de Electrificación –INDE- es una entidad estatal, autónoma y descentralizada, la cual goza de autonomía funcional, patrimonio propio, personalidad jurídica y plena capacidad para adquirir derechos y contraer obligaciones en materia de su competencia.
+                </p>
+
+            </div>
+
+            <div class="col-six tab-full right footer-subscribe">
+
+                <h4>Informacion</h4>
+                <p>
+                    Las personas interesadas en realizar una visita deberán llamar al Tel. 2422-2100 para coordinar preliminarmente una fecha y luego enviar una carta de solicitud de visita al Departamento de Responsabilidad Social Corporativa o escribir a gcomunicacion@inde.gob.gt.
+                </p>
+                <p>
+                    <a href="mailto:gcomunicacion@inde.gob.gt"><i class="fa fa-inbox" aria-hidden="true"></i><span>Email gcomunicacion@inde.gob.gt</span></a>
+                </p>
+                <p>
+                    <a href="tel:24221820"><i class="fa fa-mobile-phone" aria-hidden="true"></i><span>Telefono +502 24221820</span></a>
+                </p>
+
+
+            </div>
+
+        </div> <!-- end footer-main -->
+
+        <div class="row footer-bottom">
+
+            <div class="col-twelve">
+                <div class="copyright">
+                    <span>©2020. INDE. Reservados todos los Derechos. </span>
+                    <span>Desarrollado por: <a href="https://www.facebook.com/raulalejandro.sierra/">Raúl Sierra</a></span>
+                    <span><a href="https://www.facebook.com/profile.php?id=100007124351754">José Ruiz</a></span>
+
+                </div>
+
+                <div class="go-top">
+                    <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon-arrow-up" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+        </div> <!-- end footer-bottom -->
+
+    </footer> <!-- end footer -->
+    <!-- Java Script
+    ================================================== -->
+    <script src="@baseurl/js/jquery-3.2.1.min.js"></script>
+    <script src="@baseurl/js/plugins.js"></script>
+    <script src="@baseurl/js/main.js"></script>
+
+
+
+
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

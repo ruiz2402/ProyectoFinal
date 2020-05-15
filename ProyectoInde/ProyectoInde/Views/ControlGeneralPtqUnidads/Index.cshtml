@@ -1,0 +1,191 @@
+﻿@model IEnumerable<ProyectoInde.Models.ControlGeneralPtqUnidad>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PresionAceiteRegulador11261)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PresionAceiteControlPilotoReg11262)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PresionAceiteRefrigeradorReg11263)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TempAceiteReguladorC1180)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TempCojineteGuiaTurbinaC2722)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PAeEntradaEnfriadorCGBar26434)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QAeCGLMinX20E2727)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PAeSalidaEnfriadorCGBar26435)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TAeSalidaEnfriadorCG27362)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TAceiteCGSalidaEnfriadorC27331)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TAceiteCGEntradaEnfriadorC27331)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FlujoAceiteCGTurbinaLMinx5E2727)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FlujoAeCCombinado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FlujoAeGenerador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PAguasAbajoVeBar654)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PAguasArribaVeBar853)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PAguasArribaVeBar651)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PAceiteMandoVeBar652)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IndNivelDesfogueNormalAnormal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PBombaAeBar1894)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PAeGeneradorBar2740)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TAeTurbinaC27361)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PAeTurbinaBar26431)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PAlKgCm226432)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FecIngreso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodHora2Navigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodUnidadGeneradoraNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PresionAceiteRegulador11261)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PresionAceiteControlPilotoReg11262)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PresionAceiteRefrigeradorReg11263)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TempAceiteReguladorC1180)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TempCojineteGuiaTurbinaC2722)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PAeEntradaEnfriadorCGBar26434)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QAeCGLMinX20E2727)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PAeSalidaEnfriadorCGBar26435)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TAeSalidaEnfriadorCG27362)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TAceiteCGSalidaEnfriadorC27331)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TAceiteCGEntradaEnfriadorC27331)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlujoAceiteCGTurbinaLMinx5E2727)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlujoAeCCombinado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlujoAeGenerador)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PAguasAbajoVeBar654)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PAguasArribaVeBar853)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PAguasArribaVeBar651)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PAceiteMandoVeBar652)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IndNivelDesfogueNormalAnormal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PBombaAeBar1894)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PAeGeneradorBar2740)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TAeTurbinaC27361)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PAeTurbinaBar26431)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PAlKgCm226432)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FecIngreso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodHora2Navigation.CodHora2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodUnidadGeneradoraNavigation.UnidadGeneradora1)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CodControlGeneralPtqUnidad">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CodControlGeneralPtqUnidad">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CodControlGeneralPtqUnidad">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

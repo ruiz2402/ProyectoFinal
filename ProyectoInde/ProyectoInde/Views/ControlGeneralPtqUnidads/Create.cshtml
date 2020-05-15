@@ -1,0 +1,211 @@
+﻿@model ProyectoInde.Models.ControlGeneralPtqUnidad
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+<style>
+    /*Diseño boton*/
+    .boton_personalizado {
+        text-decoration: none;
+        /*padding: 10px;*/
+        font-weight: 600;
+        font-size: 20px;
+        color: #ffffff;
+        background-color: #1883ba;
+        border-radius: 6px;
+        border: 2px solid #0016b0;
+    }
+
+        .boton_personalizado:hover {
+            color: #1883ba;
+            background-color: transparent;
+        }
+
+    .boton_alternativo {
+        background-color: #00c69f;
+        color: #ffffff !important;
+        border: 2px solid #006400;
+        border-radius: 7px;
+    }
+
+        .boton_alternativo:hover {
+            background-color: transparent !important;
+            color: #00c69f !important;
+            text-decoration: none;
+        }
+    /*Diseño Div cont*/
+    .contpadre {
+        background: transparent;
+        height: 3150px;
+        /*IMPORTANTE*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .conthijo {
+        background: transparent;
+        width: 1000px;
+    }
+</style>
+
+<body id="top">
+    <div class="encabezado">
+        <b>UNIDADES GENERADORAS</b>
+    </div>
+    <section id='services' class="s-services">
+        <div class="contpadre">
+            <div class="conthijo">
+                <div class="row">
+                    <div class="col-md-12">
+                        <form asp-action="Create">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="PresionAceiteRegulador11261" class="control-label">PresionAceiteRegulador</label>
+                                <input asp-for="PresionAceiteRegulador11261" class="form-control" />
+                                <span asp-validation-for="PresionAceiteRegulador11261" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="PresionAceiteControlPilotoReg11262" class="control-label">PresionAceiteControlPiloto</label>
+                                <input asp-for="PresionAceiteControlPilotoReg11262" class="form-control" />
+                                <span asp-validation-for="PresionAceiteControlPilotoReg11262" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="PresionAceiteRefrigeradorReg11263" class="control-label">PresionAceiteRefrigerador</label>
+                                <input asp-for="PresionAceiteRefrigeradorReg11263" class="form-control" />
+                                <span asp-validation-for="PresionAceiteRefrigeradorReg11263" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="TempAceiteReguladorC1180" class="control-label">TemperaturaRegulador</label>
+                                <input asp-for="TempAceiteReguladorC1180" class="form-control" />
+                                <span asp-validation-for="TempAceiteReguladorC1180" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="TempCojineteGuiaTurbinaC2722" class="control-label">TemperaturaCojineteGuiaTurbina</label>
+                                <input asp-for="TempCojineteGuiaTurbinaC2722" class="form-control" />
+                                <span asp-validation-for="TempCojineteGuiaTurbinaC2722" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="PAeEntradaEnfriadorCGBar26434" class="control-label">PAeEntreadaEnfriador</label>
+                                <input asp-for="PAeEntradaEnfriadorCGBar26434" class="form-control" />
+                                <span asp-validation-for="PAeEntradaEnfriadorCGBar26434" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="QAeCGLMinX20E2727" class="control-label">Q. AE C. G. L/min.X20</label>
+                                <input asp-for="QAeCGLMinX20E2727" class="form-control" />
+                                <span asp-validation-for="QAeCGLMinX20E2727" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="PAeSalidaEnfriadorCGBar26435" class="control-label">PAeSalidaEnfriador</label>
+                                <input asp-for="PAeSalidaEnfriadorCGBar26435" class="form-control" />
+                                <span asp-validation-for="PAeSalidaEnfriadorCGBar26435" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="TAeSalidaEnfriadorCG27362" class="control-label">TAeSalidaEnfriador</label>
+                                <input asp-for="TAeSalidaEnfriadorCG27362" class="form-control" />
+                                <span asp-validation-for="TAeSalidaEnfriadorCG27362" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="TAceiteCGSalidaEnfriadorC27331" class="control-label">TAceiteCGSalidaEnfriador</label>
+                                <input asp-for="TAceiteCGSalidaEnfriadorC27331" class="form-control" />
+                                <span asp-validation-for="TAceiteCGSalidaEnfriadorC27331" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="TAceiteCGEntradaEnfriadorC27331" class="control-label">TAceiteCGEntraEnfriador</label>
+                                <input asp-for="TAceiteCGEntradaEnfriadorC27331" class="form-control" />
+                                <span asp-validation-for="TAceiteCGEntradaEnfriadorC27331" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="FlujoAceiteCGTurbinaLMinx5E2727" class="control-label">FlujoAceiteCGTurbinaLMinx</label>
+                                <input asp-for="FlujoAceiteCGTurbinaLMinx5E2727" class="form-control" />
+                                <span asp-validation-for="FlujoAceiteCGTurbinaLMinx5E2727" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="FlujoAeCCombinado" class="control-label">FlujoAeCCombinado</label>
+                                <input asp-for="FlujoAeCCombinado" class="form-control" />
+                                <span asp-validation-for="FlujoAeCCombinado" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="FlujoAeGenerador" class="control-label">FlujoAeGenerador</label>
+                                <input asp-for="FlujoAeGenerador" class="form-control" />
+                                <span asp-validation-for="FlujoAeGenerador" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="PAguasAbajoVeBar654" class="control-label">PAguasAbajoVeBar654</label>
+                                <input asp-for="PAguasAbajoVeBar654" class="form-control" />
+                                <span asp-validation-for="PAguasAbajoVeBar654" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="PAguasArribaVeBar853" class="control-label">PAguasArribaVeBar</label>
+                                <input asp-for="PAguasArribaVeBar853" class="form-control" />
+                                <span asp-validation-for="PAguasArribaVeBar853" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="PAguasArribaVeBar651" class="control-label">PAguasArribaVeBar</label>
+                                <input asp-for="PAguasArribaVeBar651" class="form-control" />
+                                <span asp-validation-for="PAguasArribaVeBar651" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="PAceiteMandoVeBar652" class="control-label">PAceiteMandoVeBar</label>
+                                <input asp-for="PAceiteMandoVeBar652" class="form-control" />
+                                <span asp-validation-for="PAceiteMandoVeBar652" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="IndNivelDesfogueNormalAnormal" class="control-label">IndNivelDesfogueNormal</label>
+                                <input asp-for="IndNivelDesfogueNormalAnormal" class="form-control" />
+                                <span asp-validation-for="IndNivelDesfogueNormalAnormal" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="PBombaAeBar1894" class="control-label">PBomba</label>
+                                <input asp-for="PBombaAeBar1894" class="form-control" />
+                                <span asp-validation-for="PBombaAeBar1894" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="PAeGeneradorBar2740" class="control-label">PAeGeneradorBar</label>
+                                <input asp-for="PAeGeneradorBar2740" class="form-control" />
+                                <span asp-validation-for="PAeGeneradorBar2740" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="TAeTurbinaC27361" class="control-label">TAeTurbina</label>
+                                <input asp-for="TAeTurbinaC27361" class="form-control" />
+                                <span asp-validation-for="TAeTurbinaC27361" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="PAeTurbinaBar26431" class="control-label">PAeTubinaBar</label>
+                                <input asp-for="PAeTurbinaBar26431" class="form-control" />
+                                <span asp-validation-for="PAeTurbinaBar26431" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="PAlKgCm226432" class="control-label">PAlkgCm</label>
+                                <input asp-for="PAlKgCm226432" class="form-control" />
+                                <span asp-validation-for="PAlKgCm226432" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="FecIngreso" class="control-label">Fecha Ingreso</label>
+                                <input asp-for="FecIngreso" class="form-control" />
+                                <span asp-validation-for="FecIngreso" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="CodHora2" class="control-label">Hora</label>
+                                <select asp-for="CodHora2" class="form-control" asp-items="ViewBag.CodHora2"></select>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="CodUnidadGeneradora" class="control-label">Unidad Generadora</label>
+                                <select asp-for="CodUnidadGeneradora" class="form-control" asp-items="ViewBag.CodUnidadGeneradora"></select>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Crear" class="btn btn_alternativo" /> <div>
+                                    <a class="btn btn_alternativo" asp-action="Index">Regresar a la Lista</a>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- </div > -->
+    </section>
+</body>
+

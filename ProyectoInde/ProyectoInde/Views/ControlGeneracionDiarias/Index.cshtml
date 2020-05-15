@@ -1,0 +1,89 @@
+﻿@model IEnumerable<ProyectoInde.Models.ControlGeneracionDiaria>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model._230kVA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CampoV)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CampoA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model._138kvA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model._138kvKv)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PAparenteMw)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PAparenteMvar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FecIngreso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodHoraNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodUnidadGeneradoraNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item._230kVA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CampoV)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CampoA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item._138kvA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item._138kvKv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PAparenteMw)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PAparenteMvar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FecIngreso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodHoraNavigation.CodHora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodUnidadGeneradoraNavigation.UnidadGeneradora1)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CodControlGeneracionDiaria">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CodControlGeneracionDiaria">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CodControlGeneracionDiaria">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

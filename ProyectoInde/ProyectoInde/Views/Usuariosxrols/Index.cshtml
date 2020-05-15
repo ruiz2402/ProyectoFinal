@@ -1,0 +1,97 @@
+﻿@model IEnumerable<ProyectoInde.Models.Usuariosxrol>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+<style>
+    /*Diseño boton*/
+    .boton_personalizado {
+        text-decoration: none;
+        /*padding: 10px;*/
+        font-weight: 600;
+        font-size: 20px;
+        color: #ffffff;
+        background-color: #1883ba;
+        border-radius: 6px;
+        border: 2px solid #0016b0;
+    }
+        .boton_personalizado:hover {
+            color: #1883ba;
+            background-color: transparent;
+        }
+
+    .boton_alternativo {
+        background-color: #00c69f;
+        color: #ffffff !important;
+        border: 2px solid #006400;
+        border-radius: 7px;
+    }
+
+        .boton_alternativo:hover {
+            background-color: transparent !important;
+            color: #00c69f !important;
+            text-decoration: none;
+        }
+    /*Diseño Div cont*/
+    .contpadre {
+        background: transparent;
+        height: 450px;
+        /*IMPORTANTE*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .conthijo {
+        background: transparent;
+        width: 1300px;
+    }
+</style>
+
+<body id="top">
+    <div class="encabezado">
+        <b>ASIGNACION DE ROLES</b>
+    </div>
+    <section id='services' class="s-services">
+        <div class="contpadre">
+            <div class="conthijo">
+                <p>
+                    <a class="btn boton_personalizado" asp-action="Create">Asignar Rol</a>
+                </p>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                               Rol
+                            </th>
+                            <th>
+                                Usuario
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CodRolNavigation.Rol1)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CodUsuarioNavigation.Apellido)
+                                </td>
+                                <td>
+                                    <a class="btn boton_alternativo" asp-action="Edit" asp-route-id="@item.CodUsuarioXrol">Editar</a> |
+                                    <a class="btn boton_alternativo" asp-action="Details" asp-route-id="@item.CodUsuarioXrol">Detalles</a> |
+                                    <a class="btn boton_alternativo" asp-action="Delete" asp-route-id="@item.CodUsuarioXrol">Eliminar</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- </div > -->
+    </section>
+</body>

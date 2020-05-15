@@ -1,0 +1,316 @@
+﻿@model IEnumerable<ProyectoInde.Models.ControlParametroUnidad>
+
+@{
+    ViewData["Title"] = "Index";
+
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+<style>
+    /*Diseño boton*/
+    .boton_personalizado {
+        text-decoration: none;
+        /*padding: 10px;*/
+        font-weight: 400;
+        font-size: 15px;
+        color: #ffffff;
+        background-color: #1883ba;
+        border-radius: 6px;
+        border: 2px solid #0016b0;
+    }
+
+        .boton_personalizado:hover {
+            color: #1883ba;
+            background-color: transparent;
+        }
+
+    .boton_alternativo {
+        font-weight: 300;
+        background-color: #00c69f;
+        color: #ffffff !important;
+        border: 2px solid #006400;
+        border-radius: 7px;
+    }
+
+        .boton_alternativo:hover {
+            background-color: transparent !important;
+            color: #00c69f !important;
+            text-decoration: none;
+        }
+    /*Diseño Div cont*/
+    .contpadre {
+        background: transparent;
+        height: 650px;
+        /*IMPORTANTE*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .conthijo {
+        background: transparent;
+        width: 1300px;
+    }
+</style>
+<body id="top">
+    <div class="encabezado">
+        <b> CONTROL DE PARAMETROS DE UNIDADES</b>
+    </div>
+    <section id='services' class="s-services">
+        <div class="contpadre">
+            <div class="conthijo">
+                <p>
+                    <a asp-action="Create">Create New</a>
+                </p>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DevanadosEstatorCDato1)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DevanadosEstatorCDato2)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DevanadosEstatorCDato3)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DevanadosEstatorCDato4)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DevanadosEstatorCDato5)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DevanadosEstatorCDato6)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DevanadosEstatorCDato7)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DevanadosEstatorCDato8)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CojineteEmpujeGeneradorCDato1)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CojineteEmpujeGeneradorCDato2)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CojineteGuiaGeneradorCDato1)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CojineteGuiaGeneradorCDato2)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.AireSalienteEnfriadoresGeneradorCDato1)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.AireSalienteEnfriadoresGeneradorCDato2)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.AireSalienteEnfriadoresGeneradorCDato3)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.AireSalienteEnfriadoresGeneradorCDato4)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.AireSalienteEnfriadoresGeneradorCDato5)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.AireSalienteEnfriadoresGeneradorCDato6)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.EntradaSalidaAguaEnfriamientoCDato1)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.EntradaSalidaAguaEnfriamientoCDato2)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.AguaSalienteEnfriadorCojinetesGenC)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.AceiteCojineteGeneradorC)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CojineteGuiaTurbinaC)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CaudalAguaSelloLMx20E2639)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.PresionAguaSelloKgCm226422)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TemperaturaSelloEje2276)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CojineteEmpujeC)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.AireLlegadaEnfriadorCNo1)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.AireLlegadaEnfriadorCNo2)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CojineteGuiaSuperiorC)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.AireSalidaEnfriadorCNo1)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.AireSalidaEnfriadorCNo2)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.PresionAguaSelloEje26432)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.PresionAguaSelloEje26431)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.PotenciaMw)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.FecIngreso)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CodHoraNavigation)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CodUnidadGeneradoraNavigation)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DevanadosEstatorCDato1)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DevanadosEstatorCDato2)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DevanadosEstatorCDato3)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DevanadosEstatorCDato4)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DevanadosEstatorCDato5)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DevanadosEstatorCDato6)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DevanadosEstatorCDato7)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DevanadosEstatorCDato8)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CojineteEmpujeGeneradorCDato1)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CojineteEmpujeGeneradorCDato2)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CojineteGuiaGeneradorCDato1)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CojineteGuiaGeneradorCDato2)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AireSalienteEnfriadoresGeneradorCDato1)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AireSalienteEnfriadoresGeneradorCDato2)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AireSalienteEnfriadoresGeneradorCDato3)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AireSalienteEnfriadoresGeneradorCDato4)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AireSalienteEnfriadoresGeneradorCDato5)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AireSalienteEnfriadoresGeneradorCDato6)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.EntradaSalidaAguaEnfriamientoCDato1)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.EntradaSalidaAguaEnfriamientoCDato2)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AguaSalienteEnfriadorCojinetesGenC)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AceiteCojineteGeneradorC)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CojineteGuiaTurbinaC)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CaudalAguaSelloLMx20E2639)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PresionAguaSelloKgCm226422)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TemperaturaSelloEje2276)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CojineteEmpujeC)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AireLlegadaEnfriadorCNo1)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AireLlegadaEnfriadorCNo2)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CojineteGuiaSuperiorC)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AireSalidaEnfriadorCNo1)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AireSalidaEnfriadorCNo2)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PresionAguaSelloEje26432)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PresionAguaSelloEje26431)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PotenciaMw)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FecIngreso)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CodHoraNavigation.CodHora)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CodUnidadGeneradoraNavigation.UnidadGeneradora1)
+                                </td>
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.CodControlParametroUnidad">Edit</a> |
+                                    <a asp-action="Details" asp-route-id="@item.CodControlParametroUnidad">Details</a> |
+                                    <a asp-action="Delete" asp-route-id="@item.CodControlParametroUnidad">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- </div > -->
+    </section>
+
+</body>

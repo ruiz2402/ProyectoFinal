@@ -1,0 +1,94 @@
+﻿@model ProyectoInde.Models.Usuariosxrol
+
+@{
+    ViewData["Title"] = "Create";
+     Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+
+    <style>
+        /*Diseño boton*/
+        .boton_personalizado {
+            text-decoration: none;
+            /*padding: 10px;*/
+            font-weight: 600;
+            font-size: 20px;
+            color: #ffffff;
+            background-color: #1883ba;
+            border-radius: 6px;
+            border: 2px solid #0016b0;
+        }
+
+            .boton_personalizado:hover {
+                color: #1883ba;
+                background-color: transparent;
+            }
+
+        .boton_alternativo {
+            background-color: #00c69f;
+            color: #ffffff !important;
+            border: 2px solid #006400;
+            border-radius: 7px;
+        }
+
+            .boton_alternativo:hover {
+                background-color: transparent !important;
+                color: #00c69f !important;
+                text-decoration: none;
+            }
+        /*Diseño Div cont*/
+        .contpadre {
+            background: transparent;
+            height: 400px;
+            /*IMPORTANTE*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .conthijo {
+            background: transparent;
+            width: 400px;
+        }
+    </style>
+
+<body id="top">
+    <div class="encabezado">
+        <b>CREAR ROL</b>
+    </div>
+    <section id='services' class="s-services">
+        <div class="contpadre">
+            <div class="conthijo">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <form asp-action="Create">
+                            <table class="egt">
+                                <tr>
+                                    <td>
+                                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                        <div class="form-group">
+                                            <label asp-for="CodUsuario" class="control-label">Usuario</label>
+                                            <select asp-for="CodUsuario" class="form-control" asp-items="ViewBag.CodUsuario"></select>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                            <label asp-for="CodRol" class="control-label">Rol</label>
+                                            <select asp-for="CodRol" class="form-control" asp-items="ViewBag.CodRol"></select>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </table>
+                            <div class="form-group">
+                                <input type="submit" value="Crear" class="btn boton_alternativo" /> <a class="btn boton_alternativo" asp-action="Index">Regresar a la Lista</a>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+

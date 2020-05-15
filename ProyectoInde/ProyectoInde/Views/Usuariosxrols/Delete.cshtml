@@ -1,0 +1,80 @@
+﻿@model ProyectoInde.Models.Usuariosxrol
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+<style>
+    /*Diseño boton*/
+    .boton_personalizado {
+        text-decoration: none;
+        /*padding: 10px;*/
+        font-weight: 600;
+        font-size: 20px;
+        color: #ffffff;
+        background-color: #1883ba;
+        border-radius: 6px;
+        border: 2px solid #0016b0;
+    }
+
+        .boton_personalizado:hover {
+            color: #1883ba;
+            background-color: transparent;
+        }
+
+    .boton_alternativo {
+        background-color: #00c69f;
+        color: #ffffff !important;
+        border: 2px solid #006400;
+        border-radius: 7px;
+    }
+
+        .boton_alternativo:hover {
+            background-color: transparent !important;
+            color: #00c69f !important;
+            text-decoration: none;
+        }
+    /*Diseño Div cont*/
+    .contpadre {
+        background: transparent;
+        height: 450px;
+        /*IMPORTANTE*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .conthijo {
+        background: transparent;
+        width: 700px;
+    }
+</style>
+<body id="top">
+    <div class="encabezado">
+        <b>ELIMINAR ROL</b>
+    </div>
+    <section id='services' class="s-services">
+        <div style='text-align:center' class="form-group">
+            <div class="contpadre">
+                <div class="conthijo">
+                  
+                        <table class="egt">
+                            <tr>
+                                <td style="color:#188f1a">Rol</td>
+                                <td>@Html.DisplayFor(model => model.CodRolNavigation.Rol1)</td>
+                            </tr>
+                            <tr>
+                                <td style="color:#188f1a">Usuario</td>
+                                <td>@Html.DisplayFor(model => model.CodUsuarioNavigation.Apellido)</td>
+                            </tr>
+                        </table>
+                  
+                            <form asp-action="Delete">
+                                <input type="hidden" asp-for="CodUsuarioXrol" />
+                                <input class="btn boton_alternativo" type="submit" value="Eliminar" />   <a class="btn boton_alternativo" asp-action="Index">Regresar a la Lista</a>
+                            </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
